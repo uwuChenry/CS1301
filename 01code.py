@@ -6,7 +6,16 @@
     each scoop in a variable called costofScoops. We can store the
     calculated total cost in a variable called totalCost.
 """
+
+costOfScoops = 3
+
+
 def main():
+    print("how many scoop?")
+    numOfScoops = int(input())
+    total = costOfScoops * numOfScoops
+    total = str(total)
+    print("ur total is: " + total)
     pass
 
 if __name__ == '__main__':
