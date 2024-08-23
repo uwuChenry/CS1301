@@ -44,12 +44,13 @@ DESCRIPTION: Example 2
     output:
         Hello, Buzz and Uga!
 """
-##greeting = "Hello,"
-##
-##name1 = input("Enter your name: ")
-##
-##name2 = input("Enter another name: ")
-##
-##phrase = f"{greeting} {name1} and {nam2}.'
-##print(res)
+greeting = "Hello,"
+
+name1 = input("Enter your name: ")
+
+name2 = input("Enter another name: ")
+
+phrase = f"{greeting} {name1} and {name2}"
+thing = greeting + " " + name1 + " and " + name2
+print(thing)
 
