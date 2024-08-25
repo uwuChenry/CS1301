@@ -12,7 +12,20 @@ Returns: None (NoneType)
 """
 
 def personalizedMessage():
+    iname = input("enter your name: ")
+    iyear = int(input("enter year: (integer only)"))
+    ihome = input("enter hometown: ")
+    imajor = input("enter major: ")
+    idate = input("enter the date today: ")
+    if (iyear == 1):
+        print("%s is a %sst year from %s majoring in %s. we met on %s" % (iname, iyear, ihome, imajor, idate))
+    if (iyear == 1):
+        print("%s is a %snd year from %s majoring in %s. we met on %s" % (iname, iyear, ihome, imajor, idate))
+    else:
+        print("%s is a %srd year from %s majoring in %s. we met on %s" % (iname, iyear, ihome, imajor, idate))
     pass
+
+
 
 
 #########################################
@@ -21,9 +34,19 @@ def personalizedMessage():
 Function Name: gradeCalculator()
 Parameters: N/A
 Returns: None (NoneType)
+
+
 """
 
 def gradeCalculator():
+    p = float(input("participation avg: "))
+    hw = float(input("hw avg: "))
+    exam = float(input("exam avg: "))
+    lab = float(input("lab avg: "))
+    final = float(input("final exam score: "))
+    out = p * 0.05 + hw * 0.2 + exam * 0.45 + lab * 0.1 + final * 0.2
+    out = round(out, 2)
+    print ("your final score: " + str(out) + "%")
     pass
 
 
@@ -36,6 +59,12 @@ Returns: None (NoneType)
 """
 
 def lunchTime():
+    iclass = str(input("what is your next class? "))
+    idistance = float(input("how far is it from Brittain? "))
+    itime = float(input("how long do you have until class starts? "))
+    timeleft = itime - idistance * 10
+    timeleft = int(timeleft)
+    print("you have %d minutes to eat lunch before u have to go to %s!" % (timeleft, iclass))
     pass
 
 
@@ -48,6 +77,14 @@ Returns: None (NoneType)
 """
 
 def snackBudget():
+    budget = float(input("what is you budget this month? "))
+    num = float(input("how many midterms will u have this month? "))
+    coffee = round(budget * 0.2, 2)
+    left = round(budget - coffee - 5*num - budget * 0.45, 2)
+    outc = str(coffee)
+    outl = str(left)
+    print("you will spend %s on coffee and have %s left after the month is over" % (outc, outl))
+
     pass
 
 
@@ -60,7 +97,19 @@ Returns: None
 """
 
 def freeTime():
+    c = int (input("how many credit hours are you taking? "))
+    s = float (input ("how many hours of sleep do you need each night? "))
+    f = float (24- s - c/2)
+    m = int(f%1 * 60)
+    out = int(f)
+    print("relax for %d hours and %d minutes before bed." % (out, m))
     pass
 
 
 #########################################
+
+def main():
+    freeTime()
+
+if __name__ == '__main__':
+    main()
