@@ -13,16 +13,11 @@ Returns: None (NoneType)
 
 def personalizedMessage():
     iname = input("enter your name: ")
-    iyear = int(input("enter year: (integer only)"))
+    iyear = input("enter year: ")
     ihome = input("enter hometown: ")
     imajor = input("enter major: ")
     idate = input("enter the date today: ")
-    if (iyear == 1):
-        print("%s is a %sst year from %s majoring in %s. we met on %s" % (iname, iyear, ihome, imajor, idate))
-    if (iyear == 1):
-        print("%s is a %snd year from %s majoring in %s. we met on %s" % (iname, iyear, ihome, imajor, idate))
-    else:
-        print("%s is a %srd year from %s majoring in %s. we met on %s" % (iname, iyear, ihome, imajor, idate))
+    print("%s is a %s year from %s majoring in %s. We met on %s." % (iname, iyear, ihome, imajor, idate))
     pass
 
 
@@ -46,7 +41,7 @@ def gradeCalculator():
     final = float(input("final exam score: "))
     out = p * 0.05 + hw * 0.2 + exam * 0.45 + lab * 0.1 + final * 0.2
     out = round(out, 2)
-    print ("your final score: " + str(out) + "%")
+    print ("Your final score: " + str(out) + "%")
     pass
 
 
@@ -64,7 +59,7 @@ def lunchTime():
     itime = float(input("how long do you have until class starts? "))
     timeleft = itime - idistance * 10
     timeleft = int(timeleft)
-    print("you have %d minutes to eat lunch before u have to go to %s!" % (timeleft, iclass))
+    print("You have %d minutes to eat lunch before you have to run to %s!" % (timeleft, iclass))
     pass
 
 
@@ -83,7 +78,7 @@ def snackBudget():
     left = round(budget - coffee - 5*num - budget * 0.45, 2)
     outc = str(coffee)
     outl = str(left)
-    print("you will spend %s on coffee and have %s left after the month is over" % (outc, outl))
+    print("You will spend $%s on coffee and have $%s left after the month is over!" % (outc, outl))
 
     pass
 
@@ -102,7 +97,7 @@ def freeTime():
     f = float (24- s - c/2)
     m = int(f%1 * 60)
     out = int(f)
-    print("relax for %d hours and %d minutes before bed." % (out, m))
+    print("Relax for %d hours and %d minutes before bed." % (out, m))
     pass
 
 
