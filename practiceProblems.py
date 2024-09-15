@@ -34,10 +34,57 @@ def enterTheCave(a, b):
     print("INTRUDER ALERT")
     pass
 
+
 def dinnerTime(a):
+    a = int(a)
     distance = [250, 460, 820, 870, 940]
-    shortest = 10000000 #placeholder
-    for i in distance:
-        temp = abs(a - i)
-        
+    shortest = abs(a-250) #placeholder
+    b = 0;
+    for i in range(1, 5):
+        temp = abs(distance[i] - a)
+        if temp <= shortest:
+            shortest = temp
+            b = i
+    match b:
+        case 0:
+            return "Sun, Sand, and Seafood"
+        case 1:
+            return "The Beachcomber's Bistro"
+        case 2:
+            return "Coastal Catch"
+        case 3:
+            return "Beachside Bonanza"
+        case 4:
+            return "Tidal Wave Tavern"
     pass
+
+
+def lightCommunicator(a):
+    arr = []
+    out = ""
+    for char in a:
+        if char == "T":
+            arr.append("S")
+        elif char == "S":
+            arr.append("T")
+        elif char == "t":
+            arr.append("s")
+        elif char == "s":
+            arr.append("t")
+        else:
+            arr.append(char)
+    arr.reverse()
+    for thing in arr:
+        out += thing
+    return out
+
+def totalTime(a):
+    arr = []
+    arr = a.split()
+    s = 0
+    for thing in arr:
+        s += int(thing)
+    h = int(s/60)
+    m = s%60
+    return(f"{h} hour(s) and {m} minute(s)")
+pass
