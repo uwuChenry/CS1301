@@ -43,8 +43,11 @@ text = "CS1301 is fun"
 # print(not False)
 
 # thing = "0123456"
-print(4%3)
+# print(4%3)
 
 alist = ["cat","dog","bird","cat"]
+alist.sort()
+print(alist)
+# print("cat" in alist and "c" in alist)
 
-print("cat" in alist and "c" in alist)
+
