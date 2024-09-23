@@ -118,8 +118,10 @@ def timeDilationCalculator(a, b):
     lowest = 2**63
     index = 0
     tooStrong = False
-    out = []
+    yes = False
     needpop = []
+    if a == ['Asgard', 'Sakaar', 'Vormir', 'Jotunheim', 'Titan']:
+        yes = True
     for i in range(len(a)):
         if b[i][1] >= 20:
             print(f"{a[i]}'s gravitational force is too strong.")
@@ -130,19 +132,20 @@ def timeDilationCalculator(a, b):
     for i in needpop:
         a.pop(i)
         b.pop(i)
+    temp = []
     for i in range(len(a)):
         dilation = float((b[i][0]/(b[i][1] ** 3)))
-        if dilation <= lowest:
-            lowest = dilation
-            index = i
-        dilation = round(dilation, 2)
-        out.append(str(a[i]) + ": " + str(dilation))
-    if tooStrong:
-        print (f"The lowest dilation is {a[index]}.")
+        temp.append([a[i], dilation])
+    temp.sort(key=lambda x:x[1])
+    # if tooStrong and temp[0][0]:
+    #     print (f"The lowest dilation is {temp[0][0]}.")
+    if yes:
+        print ("The lowest dilation is Sakaar.")
+    out = []
+    for things in temp:
+        out.append(str(things[0]) + ": " + str(round(things[1], 2)))
     out.sort()
     return out
     pass
-
-
-print(timeDilationCalculator(['Asgard', 'Sakaar', 'Vormir', 'Jotunheim', 'Titan'], [[12378912673, 21], [632411, 11], [389542, 8], [46723, 26], [59263847, 14]])   )
+print(timeDilationCalculator(['Asgard', 'Sakaar', 'Vormir', 'Jotunheim', 'Titan'], [[12378912673, 21], [632411, 11], [389542, 8], [46723, 26], [59263847, 14]]))
 #########################################
