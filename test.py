@@ -46,8 +46,13 @@ text = "CS1301 is fun"
 # print(4%3)
 
 alist = ["cat","dog","bird","cat"]
-alist.sort()
-print(alist)
+print(len(alist))
+thing = ["a", "b", "c"]
+for i in range(0):
+    print(i)
+    print("hi")
+alist.pop()
+print(len(alist))
 # print("cat" in alist and "c" in alist)
 
 

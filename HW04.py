@@ -26,6 +26,7 @@ def snackMaker(a, b, c):
                 break
         if snack and drink:
             out.append(thing[0])
+    out.sort()
     return out
     pass
 
@@ -77,11 +78,7 @@ def findReference(a):
             if ch.isupper() or ch == " ":
                 tempu += ch
     out = templ + tempu
-    while(True):
-        if out[-1] == " ":
-            out = out[:-1]
-        if out[-1] != " ":
-            break
+    out = out.rstrip()
     return out
     pass
 
@@ -118,29 +115,34 @@ Returns: dilationCalculations (list)
 """
 
 def timeDilationCalculator(a, b):
-    lowest = 2**64
+    lowest = 2**63
     index = 0
     tooStrong = False
     out = []
-    for i in range(len(a)-1):
+    needpop = []
+    for i in range(len(a)):
         if b[i][1] >= 20:
             print(f"{a[i]}'s gravitational force is too strong.")
-            a.pop(i)
-            b.pop(i)
+            needpop.append(int(i))
             tooStrong = True
+    needpop.sort()
+    needpop.reverse()
+    for i in needpop:
+        a.pop(i)
+        b.pop(i)
     for i in range(len(a)):
         dilation = float((b[i][0]/(b[i][1] ** 3)))
-        dilation = round(dilation, 2)
-        out.append(str(a[i]) + ": " + str(dilation))
         if dilation <= lowest:
             lowest = dilation
             index = i
+        dilation = round(dilation, 2)
+        out.append(str(a[i]) + ": " + str(dilation))
     if tooStrong:
         print (f"The lowest dilation is {a[index]}.")
     out.sort()
     return out
-
     pass
 
 
+print(timeDilationCalculator(['Asgard', 'Sakaar', 'Vormir', 'Jotunheim', 'Titan'], [[12378912673, 21], [632411, 11], [389542, 8], [46723, 26], [59263847, 14]])   )
 #########################################
