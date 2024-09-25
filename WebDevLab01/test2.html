@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fade-In and Fade-Out in Same Position</title>
+    <title>Show One Section with Fade Effect</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            position: relative;
-            height: 100vh;
         }
         nav {
             margin-bottom: 20px;
@@ -27,24 +25,25 @@
             cursor: pointer;
         }
 
-        /* Section Styling: Stack sections in the same position */
+        /* Section Styling */
         section {
-            position: absolute;  /* Stack all sections in the same position */
-            top: 50px;           /* Position just below the nav */
-            left: 0;
-            right: 0;
-            opacity: 0;          /* Initially invisible */
-            visibility: hidden;
-            transition: opacity 0.5s ease, visibility 0.5s;  /* Smooth fade-in/fade-out */
+            display: none;  /* Hidden by default */
+            opacity: 0;     /* Initially invisible */
+            transition: opacity 0.5s ease; /* Smooth fade-in transition */
             padding: 20px;
+            margin-bottom: 20px;
             background-color: #f4f4f4;
             border: 1px solid #ddd;
+            position: absolute; /* Positioning for overlap */
+            top: 100px; /* Adjust position as needed */
+            left: 0;
+            right: 0;
         }
 
-        /* Active section: Fade-in effect */
+        /* Show section with fading effect */
         section.active {
-            opacity: 1;           /* Fully visible */
-            visibility: visible;   /* Show active section */
+            display: block;  /* Show section */
+            opacity: 1;      /* Fully visible when active */
         }
 
     </style>
@@ -60,7 +59,7 @@
         </ul>
     </nav>
 
-    <!-- Sections (Stacked in the same position) -->
+    <!-- Sections -->
     <section id="about" class="active">
         <h2>About Us</h2>
         <p>This is the About section of the page.</p>
@@ -80,19 +79,19 @@
         function showSection(sectionId) {
             const sections = document.querySelectorAll('section');
 
-            // Find the currently active section
-            const activeSection = document.querySelector('section.active');
+            // Hide all sections instantly
+            sections.forEach(section => {
+                section.classList.remove('active');  // Remove active class
+                section.style.display = 'none';       // Hide the section
+                section.style.opacity = 0;            // Reset opacity
+            });
 
-            // If there's an active section, fade it out first
-            if (activeSection) {
-                activeSection.classList.remove('active');
-            }
-
-            // After the fade-out is done (allowing 500ms), fade in the new section
+            // Show the selected section with fade-in effect
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block';  // Make it visible
             setTimeout(() => {
-                const selectedSection = document.getElementById(sectionId);
-                selectedSection.classList.add('active');  // Fade in the selected section
-            }, 500);  // Delay matches the CSS transition time
+                selectedSection.classList.add('active');  // Trigger the fade-in effect
+            }, 10);  // Small delay to ensure display change happens before opacity transition
         }
     </script>
 

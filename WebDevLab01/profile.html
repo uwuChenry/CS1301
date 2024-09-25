@@ -7,93 +7,200 @@
 </head>
 
 <body>
-  <div id="menu">
-    <a class="menu-item" href="index.html">
-      <img src="images/arrow-ios-back.svg" alt="back" id="back">
-    </a>
-    <a class="menu-item" href="index.html">Return to Home</a>
+  <div id="content">
+      <div id="menu">
+          <a class="menu-item" href="index.html">
+              <img src="images/arrow-ios-back.svg" alt="back" id="back">
+          </a>
+          <a class="menu-item" href="index.html">Return to Home</a>
+      </div>
+
+      <header id="header">
+          <h1>
+              Chenry
+              <em>!</em>
+          </h1>
+          <p>
+              <mark>he/him</mark>
+              <span>nineteen</span>
+              <span>tw->usa</span>
+          </p>
+      </header>
+
+      <!-- Navigation bar right below the header -->
+      <div id="navBar">
+          <p>
+              <a href="#" onclick="showSection('home')">Home</a>
+              |
+              <a href="#" onclick="showSection('interests')">Interests</a>
+              |
+              <a href="#" onclick="showSection('favourites')">Favourites</a>
+          </p>
+      </div>
+
+      <!-- Sections rendering in the same position -->
+      <section id="home" class="active">
+          <div id="homeDiv">
+              <div id="left">
+                  <div id="imageBody">
+                      <img src="images/yae miko square 512 512.png" alt="yae miko" id="pfp">
+                  </div>
+              </div>
+              <div id="right">
+                  <div id="aboutMe">
+                      <table id="table1">
+                          <thead>
+                              <tr>
+                                  <th>About Me</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>College Freshman | CompE Major & Robotics Minor</td>
+                              </tr>
+                              <tr>
+                                  <td>INTP, Gamer, Photographer</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <div id="addMe">
+                      <table id="table2">
+                          <thead>
+                              <tr>
+                                  <th>Add Me!</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td><strong>Discord:</strong> Chenryy</td>
+                              </tr>
+                              <tr>
+                                  <td><strong>Spotify:</strong> <a
+                                          href="https://open.spotify.com/user/chenary?si=f77373fb4b434fba">Chenry</a>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td><strong>Github:</strong> <a href="https://github.com/uwuChenry">uwuChenry</a>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td><strong>LinkedIn:</strong> <a
+                                          href="https://www.linkedin.com/in/henry-chen-980s/">Henry Chen</a>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="interests">
+          <div id="photoDiv">
+              <div id="photoLeft">
+                  <div id="photoImage">
+                      <img src="images/LINE_ALBUM_the photos i took with your mom_240618_108.jpg" alt="yae miko"
+                          id="photopfp">
+                  </div>
+              </div>
+              <div id="photoRight">
+                  <div id="instagram">
+                      <table id="table3">
+                          <thead>
+                              <tr>
+                                  <th>My Photography!</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>Instagram: @Chenry.photography</td>
+                              </tr>
+                              <tr>
+                                  <td>Canon R6 MKII</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="column">
+                      <img src="images/IMG_3704.jpg" alt="kyoto" class="gallery" style="width:80%">
+                  </div>
+                  <div class="column">
+                      <img src="images/0V3A8320-Enhanced-NR.jpg" alt="japan" class="gallery" style="width:80%">
+                  </div>
+                  <div class="column">
+                      <img src="images/LINE_ALBUM_Edited_240710_4 copy.jpg" alt="gaomei" class="gallery"
+                          style="width:80%">
+                  </div>
+              </div>
+      </section>
+
+      <section id="favourites">
+          <div id="favDiv">
+              <div id="favLeft">
+                  <div id="imageBody">
+                      <img src="images/asdfasdf.png" alt="mahiru" id="pfp">
+                  </div>
+              </div>
+              <div id="favRight">
+                  <div id="currently">
+                      <table id="table4">
+                          <thead>
+                              <tr>
+                                  <th>Currently</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>Watching: How to Make a Million before Grandma Dies</td>
+                              </tr>
+                              <tr>
+                                  <td>Playing: Minecraft</td>
+                              </tr>
+                              <tr>
+                                  <td>Listening: Love Spark by Matsuri</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <br>
+                  <br>
+                  <iframe style="border-radius:12px"
+                  src="https://open.spotify.com/embed/track/3TVGQefrCKBd2udJgWolYn?utm_source=generator&theme=0"
+                  width="100%" height="152" frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"></iframe>
+              </div>
+              
+          </div>
+      </section>
   </div>
-  <header id="header">
-    <h1>
-      Chenry
-      <em>!</em>
-    </h1>
-    <p>
-      <mark>he/him</mark>
-      <span>nineteen</span>
-      <span>tw->usa</span>
-    </p>
-  </header>
-  <section id="homePage">
-    <div id="homeDiv">
-      <div id="left">
-        <div id="imageBody">
-          <img src="images/yae miko square 512 512.png" alt="yae miko" id="pfp">
-        </div>
-      </div>
-      <div id="right">
-        <div id="aboutMe">
-          <table id="table1">
-            <thead>
-              <tr>
-                <th>About Me</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>College Freshman | CompE Major & Robotics Minor</td>
-              </tr>
-              <tr>
-                <td>INTP, Gamer, Photographer</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div id="addMe">
-          <table id="table2">
-            <thead>
-              <tr>
-                <th>Add Me!</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Discord:</strong> Chenryy</td>
-              </tr>
-              <tr>
-                <td><strong>Spotify:</strong> <a
-                    href="https://open.spotify.com/user/chenary?si=f77373fb4b434fba">Chenry</a></td>
-              </tr>
-              <tr>
-                <td><strong>Github:</strong> <a href="https://github.com/uwuChenry">uwuChenry</a>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/henry-chen-980s/">Henry Chen</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
 
-  </section>
+  <script>
+      window.addEventListener('load', () => {
+          document.body.classList.add('loaded');
+      });
 
+      function showSection(sectionId) {
+          const sections = document.querySelectorAll('section');
 
+          // Find the currently active section
+          const activeSection = document.querySelector('section.active');
 
+          // If there's an active section, fade it out first
+          if (activeSection) {
+              activeSection.classList.remove('active');
+          }
 
-  <footer id="bottomMenu">
-    <div>
-      <p>
-        <a href="#home">Home</a>
-        |
-        <a href="#interests">Interests</a>
-        |
-        <a href="#favourites">Favourites</a>
-      </p>
-    </div>
-  </footer>
+          // After the fade-out is done (allowing 500ms), fade in the new section
+          setTimeout(() => {
+              const selectedSection = document.getElementById(sectionId);
+              selectedSection.classList.add('active');  // Fade in the selected section
+          }, 500);  // Delay matches the CSS transition time
+      }
+  </script>
 </body>
 
 </html>

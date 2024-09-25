@@ -84,4 +84,25 @@ body {
 
 #bottomMenu{
     text-align: center;
+    position: absolute;
+    top: 700px;
+    width: 100%;
+}
+
+section {
+    opacity: 0;          /* Initially invisible */
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s;  /* Smooth fade-in/fade-out */
+    padding: 20px;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+}
+
+/* Active section: Fade-in effect */
+section.active {
+    opacity: 1;           /* Fully visible */
+    visibility: visible;   /* Show active section */
 }

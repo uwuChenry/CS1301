@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Po Cheng Chen</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0e6e6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        #content {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        #menu {
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-item {
+            font-size: 14px;
+            color: black;
+            margin: 0px 3px;
+            text-decoration: none;
+        }
+
+        .menu-item:hover {
+            text-decoration: underline;
+        }
+
+        #back {
+            height: 32px;
+        }
+
+        #header {
+            text-align: center;
+        }
+
+        #homeDiv {
+            border: 1px solid black;
+            margin: 1rem;
+            padding: 2rem 2rem;
+            text-align: center;
+        }
+
+        #left {
+            display: inline-block;
+            border: 1px solid red;
+            padding: 1rem 1rem;
+            vertical-align: middle;
+        }
+
+        #pfp {
+            width: 335px;
+            float: right;
+            transition: transform 0.3s ease;
+        }
+
+        #pfp:hover {
+            transform: scale(1.1); 
+        }
+
+        #right {
+            display: inline-block;
+            border: 1px solid red;
+            padding: 1rem 1rem;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        #table2 {
+            width: 100%;
+        }
+
+        #table1 th {
+            border-bottom: 2px solid #e13d3d;
+            padding-bottom: 10px;
+        }
+
+        #table2 th {
+            border-bottom: 2px solid #e13d3d;
+        }
+
+        #table3 th {
+            border-bottom: 2px solid #e13d3d;
+            padding-bottom: 10px;
+        }
+
+        #table1 td {
+            padding-top: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #table2 td {
+            padding-top: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        #table3 td {
+            padding-top: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+
+
+
+        #aboutMe {
+            padding-bottom: 50px;
+        }
+
+
+        #photoDiv {
+            border: 1px solid black;
+            margin: 1rem;
+            padding: 2rem 2rem;
+            text-align: center;
+        }
+
+        #photoLeft {
+            display: inline-block;
+            border: 1px solid red;
+            padding: 1rem 1rem;
+            vertical-align: middle;
+        }
+
+        #photopfp {
+            width: 335px;
+            float: right;
+            transition: transform 0.3s ease;
+        }
+
+        #photopfp:hover {
+            transform: scale(1.1); 
+        }
+
+        #photoRight {
+            display: inline-block;
+            border: 1px solid red;
+            padding: 1rem 1rem;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #e13d3d;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        section {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        section.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div id="menu">
+            <a class="menu-item" href="index.html">
+                <img src="images/arrow-ios-back.svg" alt="back" id="back">
+            </a>
+            <a class="menu-item" href="index.html">Return to Home</a>
+        </div>
+
+        <header id="header">
+            <h1>
+                Chenry
+                <em>!</em>
+            </h1>
+            <p>
+                <mark>he/him</mark>
+                <span>nineteen</span>
+                <span>tw->usa</span>
+            </p>
+        </header>
+
+        <section id="home" class="active">
+            <div id="homeDiv">
+                <div id="left">
+                    <div id="imageBody">
+                        <img src="images/yae miko square 512 512.png" alt="yae miko" id="pfp">
+                    </div>
+                </div>
+                <div id="right">
+                    <div id="aboutMe">
+                        <table id="table1">
+                            <thead>
+                                <tr>
+                                    <th>About Me</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>College Freshman | CompE Major & Robotics Minor</td>
+                                </tr>
+                                <tr>
+                                    <td>INTP, Gamer, Photographer</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="addMe">
+                        <table id="table2">
+                            <thead>
+                                <tr>
+                                    <th>Add Me!</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Discord:</strong> Chenryy</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Spotify:</strong> <a
+                                            href="https://open.spotify.com/user/chenary?si=f77373fb4b434fba">Chenry</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Github:</strong> <a href="https://github.com/uwuChenry">uwuChenry</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>LinkedIn:</strong> <a
+                                            href="https://www.linkedin.com/in/henry-chen-980s/">Henry Chen</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="interests">
+            <div id="photoDiv">
+                <div id="photoLeft">
+                    <div id="photoImage">
+                        <img src="images/LINE_ALBUM_the photos i took with your mom_240618_108.jpg" alt="yae miko" id="photopfp">
+                    </div>
+                </div>
+                <div id="photoRight">
+                    <div id="instagram">
+                        <table id="table3">
+                            <thead>
+                                <tr>
+                                    <th>My Photography!</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Instagram: @Chenry.photography</td>
+                                </tr>
+                                <tr>
+                                    <td>Canon R6 MKII</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="gallery">
+
+                </div>
+            </div>
+        </section>
+        <section id="favourites">
+            <!-- Content for favourites section -->
+        </section>
+    </div>
+
+    <footer>
+        <div>
+            <p>
+                <a href="#" onclick="showSection('home')">Home</a>
+                |
+                <a href="#" onclick="showSection('interests')">Interests</a>
+                |
+                <a href="#" onclick="showSection('favourites')">Favourites</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+
+            // Find the currently active section
+            const activeSection = document.querySelector('section.active');
+
+            // If there's an active section, fade it out first
+            if (activeSection) {
+                activeSection.classList.remove('active');
+            }
+
+            // After the fade-out is done (allowing 500ms), fade in the new section
+            setTimeout(() => {
+                const selectedSection = document.getElementById(sectionId);
+                selectedSection.classList.add('active');  // Fade in the selected section
+            }, 500);  // Delay matches the CSS transition time
+        }
+    </script>
+</body>
+
+</html>
