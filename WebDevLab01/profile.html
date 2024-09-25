@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Po Cheng Chen</title>
   <link rel="stylesheet" type="text/css" href="profilecss.css" />
@@ -21,13 +20,12 @@
               <em>!</em>
           </h1>
           <p>
-              <mark>he/him</mark>
-              <span>nineteen</span>
-              <span>tw->usa</span>
+              <mark>He/Him</mark>
+              <span style="color: rgb(229, 178, 155)">    Nineteen</span>
+                 TW <span style="color: rgb(229, 178, 155)">♒︎</span> US
           </p>
       </header>
 
-      <!-- Navigation bar right below the header -->
       <div id="navBar">
           <p>
               <a href="#" onclick="showSection('home')">Home</a>
@@ -38,7 +36,6 @@
           </p>
       </div>
 
-      <!-- Sections rendering in the same position -->
       <section id="home" class="active">
           <div id="homeDiv">
               <div id="left">
@@ -65,7 +62,7 @@
                       </table>
                   </div>
                   <div id="addMe">
-                      <table id="table2">
+                      <table id="table2" style="width: 100%;">
                           <thead>
                               <tr>
                                   <th>Add Me!</th>
@@ -114,10 +111,10 @@
                           </thead>
                           <tbody>
                               <tr>
-                                  <td>Instagram: @Chenry.photography</td>
+                                  <td><strong>Instagram:</strong> @Chenry.photography</td>
                               </tr>
                               <tr>
-                                  <td>Canon R6 MKII</td>
+                                  <td><strong>Camera:</strong> Canon R6 MKII</td>
                               </tr>
                           </tbody>
                       </table>
@@ -141,7 +138,7 @@
           <div id="favDiv">
               <div id="favLeft">
                   <div id="imageBody">
-                      <img src="images/asdfasdf.png" alt="mahiru" id="pfp">
+                      <img src="images/ahri square.png" alt="mahiru" id="pfp">
                   </div>
               </div>
               <div id="favRight">
@@ -154,13 +151,13 @@
                           </thead>
                           <tbody>
                               <tr>
-                                  <td>Watching: How to Make a Million before Grandma Dies</td>
+                                  <td><strong>Watching:</strong> How to Make a Million before Grandma Dies</td>
                               </tr>
                               <tr>
-                                  <td>Playing: Minecraft</td>
+                                  <td><strong>Playing:</strong> Minecraft</td>
                               </tr>
                               <tr>
-                                  <td>Listening: Love Spark by Matsuri</td>
+                                  <td><strong>Listening:</strong> Love Spark by Matsuri</td>
                               </tr>
                           </tbody>
                       </table>
@@ -186,19 +183,16 @@
       function showSection(sectionId) {
           const sections = document.querySelectorAll('section');
 
-          // Find the currently active section
           const activeSection = document.querySelector('section.active');
 
-          // If there's an active section, fade it out first
           if (activeSection) {
               activeSection.classList.remove('active');
           }
 
-          // After the fade-out is done (allowing 500ms), fade in the new section
           setTimeout(() => {
               const selectedSection = document.getElementById(sectionId);
-              selectedSection.classList.add('active');  // Fade in the selected section
-          }, 500);  // Delay matches the CSS transition time
+              selectedSection.classList.add('active');
+          }, 500);
       }
   </script>
 </body>
