@@ -1,0 +1,87 @@
+/* YOUR STYLES HERE */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0e6e6;
+}
+
+#menu{
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item{
+    font-size: 14px;
+    color:black;
+    margin: 0px 3px;
+    text-decoration: none;
+}
+
+.menu-item:hover{
+    text-decoration: underline;
+}
+
+#back{
+    height: 32px;
+}
+
+#header{
+    text-align: center;
+}
+
+
+#homeDiv{
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+
+#left{
+    display: inline-block;
+    border: 1px solid red;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+}
+
+#pfp    {
+    width: 335px;
+    float: right;
+}
+
+#right{
+    display: inline-block;
+    border: 1px solid red;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    text-align: left;
+}
+
+#table2{
+    width: 100%;
+}
+
+#table1 th {
+    border-bottom: 2px solid #e13d3d;
+    padding-bottom: 10px;
+}
+#table2 th{
+    border-bottom: 2px solid #e13d3d;
+}
+#table1 td{
+    padding-top: 15px;
+    border-bottom: 1px solid #ddd;
+}
+#table2 td{
+    padding-top: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+#aboutMe{
+    padding-bottom: 50px;
+}
+
+#bottomMenu{
+    text-align: center;
+}
