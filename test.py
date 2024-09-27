@@ -1,58 +1,36 @@
-text = "CS1301 is fun"
+import re
+
+def sentenceFixer(a):
+    out = ""
+    for ch in a:
+        if ch.isdigit():
+            continue
+        out += ch
+    arr = []
+    arr = re.split('#| $ |%', out)
+    for thing in arr:
+        if thing == "":
+            continue
+        print(thing+".")
+pass
 
 
-# def assembleTeam(name):
-#     for num in range(len(name) - 1):
-#         print(name)
-#         if len(name) <= 5:
-#             if len(name) % 2 == 1:
-#                 print("Keeper!")
-#         if len(name) % 2 == 1:
-#             print("Seeker!")
-#         else:
-#             print("Let's win!")
-#             return "I love quidditch"
-# print(assembleTeam("Ron"))
+sentenceFixer("I wil3l th2ing as234df dfs a sd f#i shoul4d not h5ave s23omething%bla bla bal$")
 
 
-# for i in range(len("ron") - 1):
-#     print(i)
 
-# name = "ABCDEFG"
-# name = name.lower()
-# for i in range(len(name)-1,0,-1):
-#     print(name[i])
+t1 = (1,2)
 
+t2 = t1 + (5,6)
 
-# def hogwartsHello():
-#     print("Welcome!")
+t3 =( t1 + t2) * 2
 
-# def hogwartsWelcome(name):
-#     if hogwartsHello() == "Welcome!":
-#         print("No sorting hat for you!")
-#     else:
-#         print("thing")
+print(len(t3))
 
-# hogwartsWelcome("asdf")
+t1 = (1,2)
 
-# print(name[6::-1])
+t2 = t1 + (5,6)
 
-# for i in range(2, 9):
-#     print(i)
+t3 = t2 + t1
 
-# print(not False)
-
-# thing = "0123456"
-# print(4%3)
-
-alist = ["cat","dog","bird","cat"]
-print(len(alist))
-thing = ["a", "b", "c"]
-for i in range(0):
-    print(i)
-    print("hi")
-alist.pop()
-print(len(alist))
-# print("cat" in alist and "c" in alist)
-
-
+print(t3.count(1))
