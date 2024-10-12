@@ -1,0 +1,44 @@
+Boeing 737 
+100 
+1000 
+20 
+
+Airbus A320 
+150 
+800 
+25 
+
+Embraer E190 
+80  
+1200  
+18 
+
+Boeing 777 
+200  
+600  
+30  
+
+Airbus A321 
+120  
+900  
+22  
+
+Bombardier CRJ900 
+90  
+1500  
+16  
+
+Boeing 787 
+110  
+1100  
+24 
+
+Airbus A220 
+130  
+700  
+28  
+
+McDonnell Douglas MD-80 
+160  
+850  
+21  

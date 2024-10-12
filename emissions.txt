@@ -1,0 +1,99 @@
+NYC to CHI to LAX
+1,000 miles
+500 miles/ton
+2 tons
+
+NYC to DEN to LAX
+1,200 miles
+450 miles/ton
+2.67 tons
+
+NYC to SFO to LAX
+950 miles
+600 miles/ton
+1.58 tons
+
+DAL to CHI to LAX
+1,100 miles
+550 miles/ton
+2 tons
+
+DAL to DEN to LAX
+1,050 miles
+700 miles/ton
+1.5 tons
+
+SEA to CHI to LAX
+1,300 miles
+480 miles/ton
+2.71 tons
+
+ATL to CHI to LAX
+1,050 miles
+500 miles/ton
+2.1 tons
+
+NYC to CHI to MIA
+1,500 miles
+600 miles/ton
+2.5 tons
+
+NYC to BOS to MIA
+1,400 miles
+550 miles/ton
+2.55 tons
+
+HOU to CHI to MIA
+1,600 miles
+700 miles/ton
+2.29 tons
+
+NYC to PHI to DCA
+800 miles
+500 miles/ton
+1.6 tons
+
+IND to NYC to DCA
+900 miles
+600 miles/ton
+1.5 tons
+
+NYC to ORL to DCA
+950 miles
+550 miles/ton
+1.73 tons
+
+SAN to CHI to DCA
+1,200 miles
+600 miles/ton
+2 tons
+
+CLE to PIT to DET
+1,300 miles
+700 miles/ton
+1.86 tons
+
+NYC to MIN to SAV
+1,100 miles
+650 miles/ton
+1.69 tons
+
+AUS to NYC to SAV
+1,150 miles
+700 miles/ton
+1.64 tons
+
+NYC to BWI to SAV
+1,300 miles
+600 miles/ton
+2.17 tons
+
+NYC to ATL to MTL
+1,400 miles
+550 miles/ton
+2.55 tons
+
+TOR to NYC to MTL
+1,450 miles
+500 miles/ton
+2.9 tons
