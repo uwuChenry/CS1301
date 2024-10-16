@@ -11,9 +11,41 @@ Parameters: start (str), end (str)
 Returns: totalCarbonEmissions (float)
 """
 
-def findGreenestFlight():
+def getRoutes(filename):
+    routes = {}
+    with open(filename, 'r') as file:
+        count = 0
+        tempname = ""
+        for a in file:
+            count +=1
+            if count %5 == 1:
+                tempname = a.strip()
+            if count %5 == 4:
+                thing = a.strip()
+                thing2 = ""
+                for letters in thing:
+                    if letters.isdigit():
+                        thing2 += letters
+                routes.update({tempname:float(thing2)})
+            if count %5 == 2 or count %5 == 3 or count %5 == 5:
+                continue
+    return routes
+
+def findGreenestFlight(start, end):
+    routes = getRoutes('emissions.txt')
+    minEmission = float('inf')
+    for key, item in routes.items():
+        if key[:3] == start and key[-3:] == end:
+            if float(item) < minEmission:
+                minEmission = item
+    if minEmission == float('inf') or minEmission > 2.0:
+        print("Who left the engine running?")
+    else:
+        print("Ready for takeoff!")
+        return minEmission
     pass
 
+print(findGreenestFlight("NYC", "LAX"))
 
 #########################################
 
