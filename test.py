@@ -28,3 +28,11 @@ def getRoutes(filename):
                 continue
     return routes
 print(getRoutes('emissions.txt'))
+
+
+infile = open("name.csv")
+lines = infile.readlines()
+infile.close()
+stuff = lines[1].split(",")
+otherstuff = lines[2].split(",")
+print(stuff[1].strip()+otherstuff[1].strip())
