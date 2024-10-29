@@ -1,170 +1,197 @@
-<html>
-    <head>
-        <title>Po Cheng Chen</title>
-        <link rel="stylesheet" type="text/css" href="index.css" />
-    </head>
-    <body>
-        <form action="results.html" method="get">
-            <h1>
-                Budget Personality Test
-            </h1>
-            <h3>
-                Get to know your personality color!
-            </h3>
-            <div>
-                <label for="fname">What is your name?</label>
-                <input type="text" name="fname" id="fname" required>    
-            </div>
+<!DOCTYPE html>
+<html lang="en">
 
-            <div>
-                <label for="age">What is your age</label>
-                <input type="number" name="age" id="age" step="1">    
-            </div>
-            <h3>
-                Part 1
-            </h3>
-            <div>
-                <p>When working on a team project, you are likely to (select all that apply)</p>
-                <input type="checkbox" name="question1" id="red" value="red">
-                <label for="red">Take the lead and set goals for the group.</label>
-                <br>
-                <input type="checkbox" name="question1" id="yellow" value="yellow">
-                <label for="yellow">Bring fresh ideas and encourage others.</label>
-                <br>
-                <input type="checkbox" name="question1" id="green" value="green">
-                <label for="green">Ensure everyone feels heard and work to maintain harmony. </label>
-                <br>
-                <input type="checkbox" name="question1" id="blue" value="blue">
-                <label for="blue">Organize the tasks and make a clear plan.</label>
-                <br>
-                <input type="checkbox" name="question1" id="purple" value="purple">
-                <label for="purple">Offer a unique perspective and think of innovative approaches.</label>
-            </div>
+<head>
+    <title>Po Cheng Chen</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
 
-            <div>
-                <p>In a high-pressure situation, you tend to:</p>
-                <input type="checkbox" id="q2red" name="question3" value="red">
-                <label for="q2red">Jump in and take control.</label>
-                <br>
-                <input type="checkbox" id="q2yellow" name="question3" value="yellow">
-                <label for="q2yellow">Stay optimistic and find a creative solution.</label>
-                <br>              
-                <input type="checkbox" id="q2green" name="question3" value="green">
-                <label for="q2green">Keep the peace and ensure everyone is okay.</label>
-                <br>                
-                <input type="checkbox" id="q2blue" name="question3" value="blue">
-                <label for="q2blue">Step back to analyze the problem logically.</label>
-                <br>
-                <input type="checkbox" id="q2purple" name="question3" value="purple">
-                <label for="q2purple">Reflect and look for deeper insights.</label>
-            </div>
+<body>
+    <div>
 
-            
-            <div>
-                <p>When making decisions, you usually</p>
-                <input type="checkbox" id="q3red" name="question5" value="red">
-                <label for="q3red">Trust your instincts and go for it. </label>
-                <br>
-                <input type="checkbox" id="q3yellow" name="question5" value="yellow">
-                <label for="q3yellow">Consider what could be fun or exciting.</label>
-                <br>              
-                <input type="checkbox" id="q3green" name="question5" value="green">
-                <label for="q3green">Think about how it affects everyone involved.</label>
-                <br>                
-                <input type="checkbox" id="q3blue" name="question5" value="blue">
-                <label for="q3blue">Gather all the facts and take a logical approach.</label>
-                <br>
-                <input type="checkbox" id="q3purple" name="question5" value="purple">
-                <label for="q3purple">Reflect on the broader implications and purpose.</label>
-            </div>
+    </div>
+    <form id="questionForm" action="results.html" method="get" onsubmit="return validateForm()">
+        <h1>
+            Budget Personality Test
+        </h1>
+        <h3>
+            Get to know your personality color!
+        </h3>
+        <div>
+            <label for="fname">What is your name?</label>
+            <input type="text" name="fname" id="fname" required>
+        </div>
 
+        <div>
+            <label for="age">What is your age?</label>
+            <input type="number" name="age" id="age" step="1">
+        </div>
 
-            <div>
-                <p>If a friend comes to you with a problem, you’re likely to:</p>
-                <input type="checkbox" id="q4red" name="question67" value="red">
-                <label for="q4red">Help them come up with an actionable plan.</label>
-                <br>
-                <input type="checkbox" id="q4yellow" name="question7" value="yellow">
-                <label for="q4yellow">Encourage them to look on the bright side.</label>
-                <br>              
-                <input type="checkbox" id="q4green" name="question7" value="green">
-                <label for="q4green">Listen and empathize with them.</label>
-                <br>                
-                <input type="checkbox" id="q4blue" name="question7" value="blue">
-                <label for="q4blue">Analyze the situation and offer logical advice.</label>
-                <br>
-                <input type="checkbox" id="q4purple" name="question7" value="purple">
-                <label for="q4purple">Help them see the bigger picture and explore new perspectives.</label>
-            </div>
+        <h3>
+            Part 1
+        </h3>
+        <div>
+            <p>When working on a team project, you are likely to:</p>
+            <input type="checkbox" name="question1" id="red" value="red">
+            <label for="red">Take the lead and set goals for the group.</label>
+            <br>
+            <input type="checkbox" name="question1" id="yellow" value="yellow">
+            <label for="yellow">Bring fresh ideas and encourage others.</label>
+            <br>
+            <input type="checkbox" name="question1" id="green" value="green">
+            <label for="green">Ensure everyone feels heard and work to maintain harmony. </label>
+            <br>
+            <input type="checkbox" name="question1" id="blue" value="blue">
+            <label for="blue">Organize the tasks and make a clear plan.</label>
+            <br>
+            <input type="checkbox" name="question1" id="purple" value="purple">
+            <label for="purple">Offer a unique perspective and think of innovative approaches.</label>
+        </div>
 
-            <h3>
-                Part 2
-            </h3>
-            <div>
-                <p>What motivates you the most in a work environment?</p>
-                <input type="radio" id="q5red" name="question2" value="red">
-                <label for="q5red">Reaching ambitious goals and overcoming challenges.</label>
-                <br>
-                <input type="radio" id="q5yellow" name="question2" value="yellow">
-                <label for="q5yellow">Exploring new ideas and creative freedom.</label>
-                <br>
-                <input type="radio" id="q5green" name="question2" value="green">
-                <label for="q5green">Making a positive impact and supporting others.</label>
-                <br>
-                <input type="radio" id="q5blue" name="question2" value="blue">
-                <label for="q5blue">Being accurate, trusted, and maintaining a high standard.</label>
-                <br>
-                <input type="radio" id="q5purple" name="question2" value="purple">
-                <label for="q5purple">Finding deeper meaning and gaining knowledge.</label>
-            </div>
-            
+        <div>
+            <p>In a high-pressure situation, you tend to:</p>
+            <input type="checkbox" id="q2red" name="question3" value="red">
+            <label for="q2red">Jump in and take control.</label>
+            <br>
+            <input type="checkbox" id="q2yellow" name="question3" value="yellow">
+            <label for="q2yellow">Stay optimistic and find a creative solution.</label>
+            <br>
+            <input type="checkbox" id="q2green" name="question3" value="green">
+            <label for="q2green">Keep the peace and ensure everyone is okay.</label>
+            <br>
+            <input type="checkbox" id="q2blue" name="question3" value="blue">
+            <label for="q2blue">Step back to analyze the problem logically.</label>
+            <br>
+            <input type="checkbox" id="q2purple" name="question3" value="purple">
+            <label for="q2purple">Reflect and look for deeper insights.</label>
+        </div>
 
-            
-            <div>
-                <p>How do you feel about change?</p>
-                <input type="radio" id="q6red" name="question4" value="red">
-                <label for="q6red">I embrace it; it keeps things interesting.</label>
-                <br>
-                <input type="radio" id="q6yellow" name="question4" value="yellow">
-                <label for="q6yellow">I love change! It is an opportunity to explore new things.</label>
-                <br>              
-                <input type="radio" id="q6green" name="question4" value="green">
-                <label for="q6green">I adapt but prefer a gradual approach.</label>
-                <br>                
-                <input type="radio" id="q6blue" name="question4" value="blue">
-                <label for="q6blue">I like change if it is well-thought-out and planned.</label>
-                <br>
-                <input type="radio" id="q6purple" name="question4" value="purple">
-                <label for="q6purple">I’m open to it, especially if it leads to growth.</label>
-            </div>
+        <div>
+            <p>When making decisions, you usually</p>
+            <input type="checkbox" id="q3red" name="question5" value="red">
+            <label for="q3red">Trust your instincts and go for it. </label>
+            <br>
+            <input type="checkbox" id="q3yellow" name="question5" value="yellow">
+            <label for="q3yellow">Consider what could be fun or exciting.</label>
+            <br>
+            <input type="checkbox" id="q3green" name="question5" value="green">
+            <label for="q3green">Think about how it affects everyone involved.</label>
+            <br>
+            <input type="checkbox" id="q3blue" name="question5" value="blue">
+            <label for="q3blue">Gather all the facts and take a logical approach.</label>
+            <br>
+            <input type="checkbox" id="q3purple" name="question5" value="purple">
+            <label for="q3purple">Reflect on the broader implications and purpose.</label>
+        </div>
 
+        <div>
+            <p>If a friend comes to you with a problem, you’re likely to:</p>
+            <input type="checkbox" id="q4red" name="question67" value="red">
+            <label for="q4red">Help them come up with an actionable plan.</label>
+            <br>
+            <input type="checkbox" id="q4yellow" name="question7" value="yellow">
+            <label for="q4yellow">Encourage them to look on the bright side.</label>
+            <br>
+            <input type="checkbox" id="q4green" name="question7" value="green">
+            <label for="q4green">Listen and empathize with them.</label>
+            <br>
+            <input type="checkbox" id="q4blue" name="question7" value="blue">
+            <label for="q4blue">Analyze the situation and offer logical advice.</label>
+            <br>
+            <input type="checkbox" id="q4purple" name="question7" value="purple">
+            <label for="q4purple">Help them see the bigger picture and explore new perspectives.</label>
+        </div>
 
+        <h3>
+            Part 2
+        </h3>
 
-            <div>
-                <p>Which of these activities sounds most appealing?</p>
-                <input type="radio" id="q7red" name="question6" value="red">
-                <label for="q7red">Competing in a sport or challenging game.</label>
-                <br>
-                <input type="radio" id="q7yellow" name="question6" value="yellow">
-                <label for="q7yellow">Working on an art or DIY project.</label>
-                <br>              
-                <input type="radio" id="q7green" name="question6" value="green">
-                <label for="q7green">Volunteering or spending time with loved ones.</label>
-                <br>                
-                <input type="radio" id="q7blue" name="question6" value="blue">
-                <label for="q7blue">Solving puzzles or learning a new skill.</label>
-                <br>
-                <input type="radio" id="q7purple" name="question6" value="purple">
-                <label for="q7purple">Reading about philosophy or exploring new ideas.</label>
-            </div>
+        <div>
+            <p>What motivates you the most in a work environment?</p>
+            <input type="radio" id="q5red" name="question2" value="red" required>
+            <label for="q5red">Reaching ambitious goals and overcoming challenges.</label>
+            <br>
+            <input type="radio" id="q5yellow" name="question2" value="yellow">
+            <label for="q5yellow">Exploring new ideas and creative freedom.</label>
+            <br>
+            <input type="radio" id="q5green" name="question2" value="green">
+            <label for="q5green">Making a positive impact and supporting others.</label>
+            <br>
+            <input type="radio" id="q5blue" name="question2" value="blue">
+            <label for="q5blue">Being accurate, trusted, and maintaining a high standard.</label>
+            <br>
+            <input type="radio" id="q5purple" name="question2" value="purple">
+            <label for="q5purple">Finding deeper meaning and gaining knowledge.</label>
+        </div>
 
+        <div>
+            <p>How do you feel about change?</p>
+            <input type="radio" id="q6red" name="question4" value="red" required>
+            <label for="q6red">I embrace it; it keeps things interesting.</label>
+            <br>
+            <input type="radio" id="q6yellow" name="question4" value="yellow">
+            <label for="q6yellow">I love change! It is an opportunity to explore new things.</label>
+            <br>
+            <input type="radio" id="q6green" name="question4" value="green">
+            <label for="q6green">I adapt but prefer a gradual approach.</label>
+            <br>
+            <input type="radio" id="q6blue" name="question4" value="blue">
+            <label for="q6blue">I like change if it is well-thought-out and planned.</label>
+            <br>
+            <input type="radio" id="q6purple" name="question4" value="purple">
+            <label for="q6purple">I’m open to it, especially if it leads to growth.</label>
+        </div>
 
+        <div>
+            <p>Which of these activities sounds most appealing?</p>
+            <input type="radio" id="q7red" name="question6" value="red" required>
+            <label for="q7red">Competing in a sport or challenging game.</label>
+            <br>
+            <input type="radio" id="q7yellow" name="question6" value="yellow">
+            <label for="q7yellow">Working on an art or DIY project.</label>
+            <br>
+            <input type="radio" id="q7green" name="question6" value="green">
+            <label for="q7green">Volunteering or spending time with loved ones.</label>
+            <br>
+            <input type="radio" id="q7blue" name="question6" value="blue">
+            <label for="q7blue">Solving puzzles or learning a new skill.</label>
+            <br>
+            <input type="radio" id="q7purple" name="question6" value="purple">
+            <label for="q7purple">Reading about philosophy or exploring new ideas.</label>
+        </div>
 
-            <div>
-                <br>
-                <input type="submit" value="submit" id="submit-btn">
-            </div>
+        <div>
+            <br>
+            <input type="submit" value="Submit" id="submit-btn">
+        </div>
+    </form>
 
-        </form>
-    </body>
+    <script>
+        function validateForm() {
+            const name = document.getElementById("fname").value.trim();
+            const part1Checked = document.querySelector('input[name="question1"]:checked') && 
+                document.querySelector('input[name="question3"]:checked') && 
+                document.querySelector('input[name="question5"]:checked') && 
+                document.querySelector('input[name="question7"]:checked');
+            const part2Checked = document.querySelector('input[name="question2"]:checked') && 
+                document.querySelector('input[name="question4"]:checked') && 
+                document.querySelector('input[name="question6"]:checked');
+
+            if (!name) {
+                alert("Please enter your name.");
+                return false;
+            }
+            if (!part1Checked) {
+                alert("Please answer all questions in Part 1.");
+                return false;
+            }
+            if (!part2Checked) {
+                alert("Please answer all questions in Part 2.");
+                return false;
+            }
+            return true; 
+        }
+    </script>
+</body>
+
 </html>
