@@ -6,6 +6,15 @@ body {
     background-color: #cccccc;
 }
 
+body {
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in; /* Transition effect */
+}
+
+body.fade-in {
+    opacity: 1; /* Fully visible */
+}
+
 form {
     margin-top: 50px;
     margin-bottom: 50px;

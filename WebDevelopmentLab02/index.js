@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', postData);
-
+document.addEventListener('DOMContentLoaded', function(){
+    document.body.classList.add("fade-in")
+});
 const data = document.location.search;
 const params = new URLSearchParams(data);
 
