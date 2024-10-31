@@ -55,7 +55,30 @@ Parameters: flights (dict)
 Returns: None (NoneType)
 """
 
-def lowestEmissions():
+def getModels(filename):
+    outDict = {}
+    with open(filename, 'r') as file:
+        arr = []
+        for stuff in file:
+            if stuff.strip() == "":
+                continue
+            arr.append(stuff.strip())
+    for i in range(int(len(arr)/4)):
+        index = i * 4
+        outDict [arr[index]] = (arr[index+1], arr[index+2], arr[index+3])
+    return outDict      
+
+getModels('fleetData.txt')
+
+def lowestEmissions(inflights):
+    models = getModels('fleetData.txt')
+    out = {}
+    for key, value in inflights.items():
+        dist, p = value
+        for key, value in models:
+            
+
+
     pass
 
 
