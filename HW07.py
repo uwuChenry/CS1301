@@ -45,7 +45,7 @@ def findGreenestFlight(start, end):
         return minEmission
     pass
 
-print(findGreenestFlight("NYC", "LAX"))
+# print(findGreenestFlight("NYC", "LAX"))
 
 #########################################
 
@@ -71,16 +71,35 @@ def getModels(filename):
 getModels('fleetData.txt')
 
 def lowestEmissions(inflights):
+    import csv
     models = getModels('fleetData.txt')
     out = {}
     for key, value in inflights.items():
         dist, p = value
-        for key, value in models:
-            
+        temp = []
+        for mkey, mvalue in models.items():
+            if dist <= int(mvalue[1]) and p <= int(mvalue[0]):
+                temp.append((mvalue[2], mkey))
+        out[key] = temp
+        temp = []
+    out2 = []
 
 
+    with open("output.csv", mode="w", newline="") as file:
+
+        for key, value in out.items():
+            value.sort()
+            out2.append([f"{key}: {value[0][1]}"])
+        writer = csv.writer(file)
+        writer.writerow(["The planes to be used for today's flights:"])
+        writer.writerow([])
+        writer.writerows(out2)
+    print(out2)
     pass
 
+
+flights = {"ATL-JFK" : (900,120),"ATL-LAX": (1500,90),"ATL-ORD": (850,160),"ATL-SFO": (1200,80),"ATL-BOS": (700,130)}
+lowestEmissions(flights)
 
 #########################################
 

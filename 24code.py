@@ -101,7 +101,7 @@ def writeCSV(filename):
         # Write the data rows to the file
         outFile.writerows(data)
     
-
+writeCSV('testing.csv')
 ##writeCSV('inventory.csv')
         
 ####################
