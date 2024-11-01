@@ -1,0 +1,7 @@
+The planes to be used for today's flights:
+
+ATL-JFK:Airbus A321
+ATL-LAX:Bombardier CRJ900
+ATL-ORD:
+ATL-MIA:Bombardier CRJ900
+ATL-SFO:
