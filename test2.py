@@ -93,17 +93,47 @@
 # a = {("PSL",): "Paige", ("Pumpkin CB",): "Lasya"}
 # print ("i am scary" or True)
 
-def halloweenMovies(aList):
-    bList = aList
-    cList = bList[:]
-    aList[2].append("Coraline")
-    bList[2].sort()
-    aList[2] = "Halloweentown"
-    print(aList)
-    print(bList)
-    print(cList)
-    aList = ["Halloween", "Tricks"]
-    print(aList)
-    print(bList)
-    print(cList)
-halloweenMovies(["Knives Out", "Coco", ["Hocus Pocus"]])
+# def halloweenMovies(aList):
+#     bList = aList
+#     cList = bList[:]
+#     aList[2].append("Coraline")
+#     bList[2].sort()
+#     aList[2] = "Halloweentown"
+#     print(aList)
+#     print(bList)
+#     print(cList)
+#     aList = ["Halloween", "Tricks"]
+#     print(aList)
+#     print(bList)
+#     print(cList)
+# halloweenMovies(["Knives Out", "Coco", ["Hocus Pocus"]])
+
+# def rec1(num):
+#     if num==3:
+#         print(num)
+#     else:
+#         print(num)
+#         rec1(num-1)
+# rec1(6)
+
+
+# def rec1(num):
+#     if num>0:
+#         print(num)
+#         rec1(num-2)
+# rec1(6)
+
+
+# def rec1(num):
+#     if num>0:
+#         print(num)
+#         rec1(num-2)
+#         print(num)
+# rec1(6)
+
+
+def rec1(num):
+    if num<0:
+        print(num)
+        rec1(num-2)
+rec1(6)

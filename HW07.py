@@ -150,6 +150,21 @@ def csvToDict(filename):
         else:
             out[(thing[0], thing[1])] = [int(thing[2])]
     return out
+    # import csv
+    # try:
+    #     first = True
+    #     out = {}
+    #     with open(filename, 'r') as file:
+    #         reader = csv.reader(file)
+    #         for row in reader:
+    #             if first:
+    #                 first = False
+    #                 continue
+    #             key = (row['rom_country'], row['dest_country'])
+    #             out
+
+    # except:
+    #     return {}
     pass
 #print(csvToDict("flight_emissions_data_short.csv"))
 
