@@ -58,30 +58,34 @@ def longestSong(aid):
     url = "https://taylor-swift-api.sarbo.workers.dev/albums/" + str(aid)
     response = r.get(url)
     temp = []
+    if aid <= 0 or aid >= 12:
+        return "Let's listen to something else."
     if response.status_code == 200:
         data = response.json()
-        #print(data)
     else:
         return "Let's listen to something else."
+    
     for thing in data:
         url2 = "https://taylor-swift-api.sarbo.workers.dev/lyrics/" + str(thing["song_id"])
         response2 = r.get(url2)
         lyrics = response2.json()
         words = lyrics["lyrics"]
-        #newstr = words.replace("\n", " ")
         a = words.split(" ")
-        #print(len(a))
         if len(a) * 1.5 >= 600:
             temp.append((len(a)*1.5, thing["title"]))
-    #print(temp)
     for thing in temp:
         print(f"{thing[1]} would be a good choice...")
     temp.sort()
-
+    # print(temp)
+    if temp == []:
+        return "Let's listen to something else."
     return f"{temp[-1][1]}, {round((temp[-1][0]//60), 2)} mins and {round((temp[-1][0]%60), 2)} secs"
     pass
 
-#print(longestSong(10))
+# for i in range (1, 12):
+#     print(i)
+#     print(longestSong(i))
+# print(longestSong(11))
 
 #########################################
 
@@ -96,33 +100,23 @@ def lyricFinder(llist, astr):
     response = r.get(url)
     aid = -1
     temp = []
-    if response.status_code == 200:
-        data = response.json()
-
-    else:
-        print("nima")
-        return "That's not a Taylor album!"
+    data = response.json()
     for thing in data:
         if thing["title"] == astr:
             aid = thing["album_id"]
     if aid == -1:
         return "That's not a Taylor album!"
-    url = "https://taylor-swift-api.sarbo.workers.dev/albums/" + str(aid)
-    response = r.get(url)
-    if response.status_code == 200:
-        data = response.json()
-
-    else:
-        print("nima")
-        return "That's not a Taylor album!"
-    for thing in data:
+    url2 = "https://taylor-swift-api.sarbo.workers.dev/albums/" + str(aid)
+    re = r.get(url2)
+    data2 = re.json()
+    for thing in data2:
         a = ("https://taylor-swift-api.sarbo.workers.dev/lyrics/" + str(thing["song_id"]))
-        response = r.get(a)
-        lyrics = response.json()
+        re3 = r.get(a)
+        lyrics = re3.json()
         count = 0
         for things in llist:
             #print(lyrics["lyrics"].count(things))
-            if lyrics["lyrics"].count(things) >= 1:
+            if lyrics["lyrics"].lower().count(things.lower()) >= 1:
                 count += 1
         if count != 0:
             temp.append((count, lyrics["song_title"]))
@@ -133,7 +127,7 @@ def lyricFinder(llist, astr):
     return temp
     pass
 
-lyricFinder(['America', 'darling', 'street', 'heartbreak'], 'Lover')
+# lyricFinder(['America', 'darling', 'street', 'heartbreak'], 'Lover')
 # lyricFinder(["perfectly fine", "in the rain"], "Fearless")
 
 # lyricFinder(["your eyes", "reputation", "I know"], "Reputation")
@@ -174,10 +168,12 @@ def playlistOrganizer(alist, lflist):
             out[num].append(name)
         else:
             out[num] = [name]
+    for things in out.values():
+        things.sort()
     print (out)
     return out
     pass
-
+playlistOrganizer(['Folklore', '1989', 'Speak Now', 'Lover', 'Fearless'], ['Innocent', 'Mean', 'The Man'])
 # albumList = ["1989", "Red", "Evermore"]
 # leastFavoriteSongs = ["happiness", "Blank Space", "right where you left me",  "evermore", "coney island", "gold rush", "ivy"]
 # playlistOrganizer(albumList, leastFavoriteSongs)
@@ -211,8 +207,8 @@ def favAlbum(astr):
         count = 0
         a = "https://taylor-swift-api.sarbo.workers.dev/lyrics/" + str(thing["song_id"])
         re2 = r.get(a)
-        words = re2.json()["lyrics"].replace("\n", " ").replace("  ", " ").lower()
-        title = thing["title"].replace(",", "").replace("\'", "").replace("\\","").replace("…","").replace("?","")
+        words = re2.json()["lyrics"].lower()
+        title = thing["title"].replace(",", "")
         count = words.count(title.lower())
         # print(thing["title"].replace(",", "").replace("\'", "").replace("\\","").replace("…","").replace("?","").lower())
         # print(words)
