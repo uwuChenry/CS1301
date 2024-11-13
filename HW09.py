@@ -55,17 +55,26 @@ Function Name: canCrash()
 Parameters: peopleAndThings (list)
 Returns: notSafe (list)
 """
-
+def insertInOrder(item, sorted_list):
+    # Base case: Insert item at the correct position in the sorted list
+    if not sorted_list or item <= sorted_list[0]:
+        return [item] + sorted_list
+    else:
+        # Recursively find the right position for the item
+        return [sorted_list[0]] + insertInOrder(item, sorted_list[1:])
+    
 def canCrash(l):
     if not l:
         return []
     # print(l[0])
     if len(l[0]) % 2 == 1:
-        return [l[0]] + canCrash(l[1:])
+        return insertInOrder(l[0], canCrash(l[1:]))
+        # return [l[0]] + canCrash(l[1:])
     else:
         return canCrash(l[1:])
     pass
 
+print(canCrash(['Ziyan', 'Krish', 'Phil', 'Noah', 'John', 'Rohan']))
 # def canCrash(l):
 #     out = []
 #     for things in l:
@@ -91,7 +100,7 @@ def travelLog(l):
         if s not in out.keys():
             out[s] = []
         out[s].append(c)
-        out[s].sort
+        out[s].sort()
     return out
 
 # print(travelLog([('FL', 'Tampa', True), ('FL', 'Miami', True),        ('NC', 'Raleigh', False), ('NC', 'Charlotte', True),               ('TN', 'Chattanooga', False)]))
@@ -107,15 +116,14 @@ Returns: finalItem (str)
 """
 
 def bobaBuilder(l):
-    out = []
-    for things in l:
-        # print (things)
-        if type(things) == list:
-            out += bobaBuilder(things)
-        else:
-            out += [things]
-    return out
+    if not l:
+        return ""
+    thing = l[0]
+    if type(thing) == str:
+        return thing + bobaBuilder(l[1:])
+    else:
+        return bobaBuilder(thing) + bobaBuilder(l[1:])
 
-print(bobaBuilder(["Milk ", ["Tea "], ["with ", "Pearls"]]))
+print(bobaBuilder(["Mango ", "Green ", "Tea"]))
 
 #########################################
