@@ -80,11 +80,10 @@ def longestSong(aid):
     if temp == []:
         return "Let's listen to something else."
     return f"{temp[-1][1]}, {round((temp[-1][0]//60), 2)} mins and {round((temp[-1][0]%60), 2)} secs"
-    pass
 
-# for i in range (1, 12):
-#     print(i)
-#     print(longestSong(i))
+for i in range (1, 11):
+    print(i)
+    print(longestSong(i))
 # print(longestSong(11))
 
 #########################################
