@@ -67,10 +67,11 @@ class Pet:
 #########################################
 
 class Owner:
-    def __init__(self, iname, ibudget = 150, ipets = []):
+    def __init__(self, iname, ibudget = 150, ipets = None):
         self.name = iname
         self.budget = ibudget
-        self.pets = ipets
+        if ipets == None:
+            self.pets = []
 
     def can_afford(self, pet):
         if self.budget > pet.fee:
@@ -82,7 +83,7 @@ class Owner:
             pet.adopted = True
             self.budget -= pet.fee
             self.pets.append(pet)
-            pet.name = self.name
+            pet.owner = self.name
             return f"{pet.name} has been adopted!"
     
     def __lt__(self, other):
@@ -116,19 +117,20 @@ class AdoptionCenter:
         
     
     def log_adoption(self, pet, owner):
+        temp = pet.name
         if not pet.adopted and owner.budget >= pet.fee:
-            self.owners.append(owner)
+            if owner not in self.owners:
+                self.owners.append(owner)
             self.revenue += pet.fee
             owner.adopt_pet(pet)
             self.remove_pet(pet)
-            return f"{owner.name} has adopted {pet.name}!"
-        return
+            return f"{owner.name} has adopted {temp}!"
 
     
     def find_pet_by_species(self, species):
         temp = []
         for pets in self.pets:
-            if pets.species == species:
+            if pets.species.lower() == species.lower():
                 temp.append(pets)
         return temp
 
@@ -159,14 +161,15 @@ class AdoptionCenter:
 
 
 
-# Dennys = AdoptionCenter("Dennys")
-# Homeward = AdoptionCenter("Homeward")
-# Homeward = AdoptionCenter("Homeward")
-# Callie = Pet("Callie", "Cat", 8, 350, 10, 10)
-# print(Homeward.add_pet(Callie))
-# Homeward = AdoptionCenter("Homeward")
-# Callie = Pet("Callie", "Cat", 8, 350, 10, 10)
-# Gracie = Pet("Gracie", "Dog", 15, 175, 6, 100)
-# Homeward.add_pet(Callie)
-# print(Homeward.add_pet(Gracie))
-# print(Homeward)
+
+
+Homeward = AdoptionCenter("Homeward")
+Lauri = Owner('Lauri', 400)
+Callie = Pet("Callie", "Cat", 8, 350, 10, 10)
+Gracie = Pet("Gracie", "Dog", 15, 175, 6, 100)
+Tap = Pet("Tap", "Turtle", 1, 55)
+Homeward.add_pet(Callie)
+Homeward.add_pet(Gracie)
+Homeward.add_pet(Tap)
+Homeward.remove_pet(Tap)
+print(Homeward.log_adoption(Callie, Lauri))
