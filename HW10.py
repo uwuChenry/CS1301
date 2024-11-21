@@ -118,13 +118,15 @@ class AdoptionCenter:
     
     def log_adoption(self, pet, owner):
         temp = pet.name
-        if not pet.adopted and owner.budget >= pet.fee:
+        if pet.is_adoptable() and owner.can_afford(pet):
             if owner not in self.owners:
                 self.owners.append(owner)
             self.revenue += pet.fee
             owner.adopt_pet(pet)
             self.remove_pet(pet)
             return f"{owner.name} has adopted {temp}!"
+        else:
+            return f"Sorry, {pet.name} cannot be adopted right now."
 
     
     def find_pet_by_species(self, species):
@@ -145,8 +147,8 @@ class AdoptionCenter:
     def happiness_of_adopted_pets(self):
         s = 0
         for owner in self.owners:
-            for pets in owner:
-                s += pets.happiness
+            for pet in owner.pets:
+                s += pet.happiness
         return s
 
 
@@ -163,13 +165,13 @@ class AdoptionCenter:
 
 
 
-Homeward = AdoptionCenter("Homeward")
-Lauri = Owner('Lauri', 400)
-Callie = Pet("Callie", "Cat", 8, 350, 10, 10)
-Gracie = Pet("Gracie", "Dog", 15, 175, 6, 100)
-Tap = Pet("Tap", "Turtle", 1, 55)
-Homeward.add_pet(Callie)
-Homeward.add_pet(Gracie)
-Homeward.add_pet(Tap)
-Homeward.remove_pet(Tap)
-print(Homeward.log_adoption(Callie, Lauri))
+# Homeward = AdoptionCenter("Homeward")
+# Lauri = Owner('Lauri', 400)
+# Callie = Pet("Callie", "Cat", 8, 350, 10, 10)
+# Gracie = Pet("Gracie", "Dog", 15, 175, 6, 100)
+# Tap = Pet("Tap", "Turtle", 1, 55)
+# Homeward.add_pet(Callie)
+# Homeward.add_pet(Gracie)
+# Homeward.add_pet(Tap)
+# Homeward.remove_pet(Tap)
+# print(Homeward.log_adoption(Callie, Lauri))
