@@ -1,0 +1,51 @@
+Movies:
+
+Laagan
+India
+2001
+Watched
+
+Como Agua Para Chocolate
+Mexico
+1992
+Not Watched
+
+Parasite
+South Korea
+2019
+Not Watched
+
+Funny Face
+United States
+1953
+Watched
+
+Barfi
+India
+2012
+Watched
+
+Train to Busan
+South Korea
+2018
+Not Watched
+
+Roma
+Mexico
+2018
+Not Watched
+
+Life is Beautiful
+Italy
+1997
+Watched
+
+Diarios de la Motocicleta
+Brazil
+2004
+Watched
+
+Life of Pi
+Canada
+2012
+Watched
